@@ -1,0 +1,15 @@
+# Permitir apenas imagens
+<FilesMatch "\.(jpg|jpeg|png|webp)$">
+    Order allow,deny
+    Allow from all
+</FilesMatch>
+
+# Negar acesso a outros tipos de arquivo
+<FilesMatch "\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Desabilitar execução de scripts
+Options -ExecCGI
+AddHandler cgi-script .php .pl .py .jsp .asp .sh .cgi
